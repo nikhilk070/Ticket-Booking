@@ -4,9 +4,10 @@ const ticketSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true },
-    event: { type: String, required: true },
-    seat: { type: String, required: true },
-    qrCode: { type: String, required: true },
+    branch: { type: String, required: true },
+    year: { type: String, required: true },
+    qrCode: { type: String},
+    scanned: {type: Boolean, default: false}
   },
   { timestamps: true }
 );

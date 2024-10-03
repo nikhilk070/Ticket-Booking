@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const sendEmail = async (to, subject, text, qrCode) => {
+const sendEmail = async (to, subject, text, ticketimgpath) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -17,8 +17,7 @@ const sendEmail = async (to, subject, text, qrCode) => {
     attachments: [
       {
         filename: "ticket-qr-code.png",
-        content: qrCode.split("base64,")[1], // Extract base64 data from Data URL
-        encoding: "base64",
+        path: ticketimgpath
       },
     ],
   };
